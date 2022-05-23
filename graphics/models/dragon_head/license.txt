@@ -1,0 +1,11 @@
+Model Information:
+* title:	Dragon Head
+* source:	https://sketchfab.com/3d-models/dragon-head-9975ec8810134f52802381b4132379f1
+* author:	KinanArts (https://sketchfab.com/KinanArts)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Dragon Head" (https://sketchfab.com/3d-models/dragon-head-9975ec8810134f52802381b4132379f1) by KinanArts (https://sketchfab.com/KinanArts) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

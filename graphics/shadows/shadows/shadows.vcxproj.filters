@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Исходные файлы">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Файлы ресурсов">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="PostProcessShaders">
+      <UniqueIdentifier>{bb56209f-b058-4970-b7ae-e37275c9eee4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\ImGui">
+      <UniqueIdentifier>{9e3003aa-d051-480e-b807-d968f73c6a39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\ImGui">
+      <UniqueIdentifier>{ae4e350f-3e4e-4957-8176-c229c7f7a0fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PBRShaders">
+      <UniqueIdentifier>{18ec88c5-da7b-4f4f-8270-bd9f08b53d24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EnvironmentShaders">
+      <UniqueIdentifier>{6a65c8ce-040f-409f-9fa5-ab3ddef5c863}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EnvironmentCubeShaders">
+      <UniqueIdentifier>{cf62771c-6b84-4a91-9f70-4c1d05e927cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="IBLShaders">
+      <UniqueIdentifier>{2b891cea-3a4c-429c-95f1-1f22277418d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BloomShaders">
+      <UniqueIdentifier>{9940c353-ac03-4433-91fc-990bd9797ecd}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="DeviceResources.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="App.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderTexture.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="ToneMapPostProcess.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="AverageLuminanceProcess.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Settings.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ImGui\imgui.cpp">
+      <Filter>Исходные файлы\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ImGui\imgui_draw.cpp">
+      <Filter>Исходные файлы\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ImGui\imgui_impl_dx11.cpp">
+      <Filter>Исходные файлы\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ImGui\imgui_impl_win32.cpp">
+      <Filter>Исходные файлы\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ImGui\imgui_tables.cpp">
+      <Filter>Исходные файлы\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ImGui\imgui_widgets.cpp">
+      <Filter>Исходные файлы\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Model.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="BloomProcess.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelShaders.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\DDSTextureLoader11.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="PingPong.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="FieldSwapper.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\WICTextureLoader.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimatedTexture.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="VectorField.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Artorias.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="PostProcessShaders.fx">
+      <Filter>PostProcessShaders</Filter>
+    </FxCompile>
+    <FxCompile Include="CopyVertexShader.hlsl">
+      <Filter>PostProcessShaders</Filter>
+    </FxCompile>
+    <FxCompile Include="ToneMapPixelShader.hlsl">
+      <Filter>PostProcessShaders</Filter>
+    </FxCompile>
+    <FxCompile Include="CopyPixelShader.hlsl">
+      <Filter>PostProcessShaders</Filter>
+    </FxCompile>
+    <FxCompile Include="LuminancePixelShader.hlsl">
+      <Filter>PostProcessShaders</Filter>
+    </FxCompile>
+    <FxCompile Include="PBRShaders.fx">
+      <Filter>PBRShaders</Filter>
+    </FxCompile>
+    <FxCompile Include="PBRVertexShader.hlsl">
+      <Filter>PBRShaders</Filter>
+    </FxCompile>
+    <FxCompile Include="PBRPixelShader.hlsl">
+      <Filter>PBRShaders</Filter>
+    </FxCompile>
+    <FxCompile Include="NDPixelShader.hlsl">
+      <Filter>PBRShaders</Filter>
+    </FxCompile>
+    <FxCompile Include="GPixelShader.hlsl">
+      <Filter>PBRShaders</Filter>
+    </FxCompile>
+    <FxCompile Include="FPixelShader.hlsl">
+      <Filter>PBRShaders</Filter>
+    </FxCompile>
+    <FxCompile Include="EnvironmentPixelShader.hlsl">
+      <Filter>EnvironmentShaders</Filter>
+    </FxCompile>
+    <FxCompile Include="EnvironmentShaders.fx">
+      <Filter>EnvironmentShaders</Filter>
+    </FxCompile>
+    <FxCompile Include="EnvironmentVertexShader.hlsl">
+      <Filter>EnvironmentShaders</Filter>
+    </FxCompile>
+    <FxCompile Include="IBLShaders.fx">
+      <Filter>IBLShaders</Filter>
+    </FxCompile>
+    <FxCompile Include="IrradiancePixelShader.hlsl">
+      <Filter>IBLShaders</Filter>
+    </FxCompile>
+    <FxCompile Include="EnvironmentCubePixelShader.hlsl">
+      <Filter>EnvironmentCubeShaders</Filter>
+    </FxCompile>
+    <FxCompile Include="EnvironmentCubeShaders.fx">
+      <Filter>EnvironmentCubeShaders</Filter>
+    </FxCompile>
+    <FxCompile Include="EnvironmentCubeVertexShader.hlsl">
+      <Filter>EnvironmentCubeShaders</Filter>
+    </FxCompile>
+    <FxCompile Include="PrefilteredColorPixelShader.hlsl">
+      <Filter>IBLShaders</Filter>
+    </FxCompile>
+    <FxCompile Include="PreintegratedBRDFPixelShader.hlsl">
+      <Filter>IBLShaders</Filter>
+    </FxCompile>
+    <FxCompile Include="IBLVertexShader.hlsl">
+      <Filter>IBLShaders</Filter>
+    </FxCompile>
+    <FxCompile Include="BloomShaders.fx">
+      <Filter>BloomShaders</Filter>
+    </FxCompile>
+    <FxCompile Include="BloomAddComputeShader.hlsl">
+      <Filter>BloomShaders</Filter>
+    </FxCompile>
+    <FxCompile Include="BlurComputeShader.hlsl">
+      <Filter>BloomShaders</Filter>
+    </FxCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DeviceResources.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderStructures.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="App.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderTexture.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="ToneMapPostProcess.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="AverageLuminanceProcess.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Settings.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ImGui\imconfig.h">
+      <Filter>Файлы заголовков\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ImGui\imgui.h">
+      <Filter>Файлы заголовков\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ImGui\imgui_impl_dx11.h">
+      <Filter>Файлы заголовков\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ImGui\imgui_impl_win32.h">
+      <Filter>Файлы заголовков\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ImGui\imgui_internal.h">
+      <Filter>Файлы заголовков\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ImGui\imstb_rectpack.h">
+      <Filter>Файлы заголовков\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ImGui\imstb_textedit.h">
+      <Filter>Файлы заголовков\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ImGui\imstb_truetype.h">
+      <Filter>Файлы заголовков\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\stb_image.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tiny_gltf.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\json.hpp">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\stb_image_write.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Model.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="BloomProcess.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelShaders.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\DDSTextureLoader11.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Artorias.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimatedTexture.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="FieldSwapper.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="PingPong.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\WICTextureLoader.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="VectorField.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="env.hdr">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\models\car_scene\scene.gltf">
+      <Filter>Файлы ресурсов</Filter>
+    </None>
+    <None Include="..\..\models\msz-006\scene.gltf">
+      <Filter>Файлы ресурсов</Filter>
+    </None>
+    <None Include="..\..\models\red_barn\scene.gltf">
+      <Filter>Файлы ресурсов</Filter>
+    </None>
+    <None Include="..\..\models\spitfire\scene.gltf">
+      <Filter>Файлы ресурсов</Filter>
+    </None>
+  </ItemGroup>
+</Project>

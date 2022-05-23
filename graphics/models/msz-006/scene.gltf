@@ -1,0 +1,489 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 65532,
+      "max": [
+        5.5057392120361328,
+        18.958580017089844,
+        4.031959056854248
+      ],
+      "min": [
+        -5.5057392120361328,
+        -0.028152309358119965,
+        -4.5691165924072266
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 786384,
+      "componentType": 5126,
+      "count": 65532,
+      "max": [
+        1,
+        1,
+        1
+      ],
+      "min": [
+        -1,
+        -1,
+        -1
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 65532,
+      "max": [
+        1,
+        0.99904316663742065,
+        0.99973714351654053,
+        1
+      ],
+      "min": [
+        -0.99997633695602417,
+        -0.99904316663742065,
+        -1,
+        -1
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 65532,
+      "max": [
+        0.99985170364379883,
+        0.95534920692443848
+      ],
+      "min": [
+        0.00014827995619270951,
+        0.00017686403589323163
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 212880,
+      "max": [
+        65531
+      ],
+      "min": [
+        0
+      ],
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 1572768,
+      "componentType": 5126,
+      "count": 44384,
+      "max": [
+        5.1525883674621582,
+        18.770811080932617,
+        3.648162841796875
+      ],
+      "min": [
+        -5.1784219741821289,
+        -0.017406221479177475,
+        -2.6052370071411133
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 2105376,
+      "componentType": 5126,
+      "count": 44384,
+      "max": [
+        1,
+        1,
+        1
+      ],
+      "min": [
+        -1,
+        -1,
+        -1
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "byteOffset": 1048512,
+      "componentType": 5126,
+      "count": 44384,
+      "max": [
+        1,
+        0.9999738335609436,
+        0.99978244304656982,
+        1
+      ],
+      "min": [
+        -0.99999374151229858,
+        -0.9999738335609436,
+        -1,
+        -1
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 524256,
+      "componentType": 5126,
+      "count": 44384,
+      "max": [
+        0.99985170364379883,
+        0.95534920692443848
+      ],
+      "min": [
+        0.00014827995619270951,
+        0.00017730271792970598
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 851520,
+      "componentType": 5125,
+      "count": 127080,
+      "max": [
+        44383
+      ],
+      "min": [
+        0
+      ],
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "cosmos28 (https://sketchfab.com/cosmos28)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/models/c79a648bdd1b4ccfbf11f2dc5f836a66",
+      "title": "msz-006 Zeta Gundam"
+    },
+    "generator": "Sketchfab-3.29.3",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 1359840,
+      "byteOffset": 0,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 879328,
+      "byteOffset": 1359840,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 2637984,
+      "byteOffset": 2239168,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 1758656,
+      "byteOffset": 4877152,
+      "byteStride": 16,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 6635808,
+      "uri": "scene.bin"
+    }
+  ],
+  "images": [
+    {
+      "uri": "textures/zeta_baseColor.jpeg"
+    },
+    {
+      "uri": "textures/zeta_metallicRoughness.png"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "name": "zeta",
+      "occlusionTexture": {
+        "index": 1,
+        "strength": 1,
+        "texCoord": 0
+      },
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "baseColorTexture": {
+          "index": 0,
+          "texCoord": 0
+        },
+        "metallicFactor": 1,
+        "metallicRoughnessTexture": {
+          "index": 1,
+          "texCoord": 0
+        },
+        "roughnessFactor": 1
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3
+          },
+          "indices": 4,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 6,
+            "POSITION": 5,
+            "TANGENT": 7,
+            "TEXCOORD_0": 8
+          },
+          "indices": 9,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "name": "RootNode (gltf orientation matrix)",
+      "rotation": [
+        -0.70710678118654746,
+        -0,
+        -0,
+        0.70710678118654757
+      ]
+    },
+    {
+      "children": [
+        2
+      ],
+      "matrix": [
+        0.74831622838973999,
+        0.029878713190555573,
+        0.66266888380050659,
+        0,
+        0.66225773096084595,
+        0.023447735235095024,
+        -0.74890917539596558,
+        0,
+        -0.037914525717496872,
+        0.9992784857749939,
+        -0.0022410864476114511,
+        0,
+        9.051487922668457,
+        -23.981924057006836,
+        1.5459681749343872,
+        1
+      ],
+      "name": "RootNode (model correction matrix)"
+    },
+    {
+      "children": [
+        3
+      ],
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        -1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "name": "scene.fbx"
+    },
+    {
+      "children": [
+        4,
+        7,
+        10
+      ],
+      "name": "RootNode"
+    },
+    {
+      "children": [
+        5,
+        6
+      ],
+      "matrix": [
+        0.75356330473243816,
+        5.5511151231257827e-17,
+        -0.65737534617654059,
+        0,
+        0.65737534617653992,
+        -4.3711390063094768e-08,
+        0.75356330473243749,
+        0,
+        -2.8734790158413404e-08,
+        -0.99999999999999911,
+        -3.2939299732248628e-08,
+        0,
+        3.8107263455028746,
+        14.717886114855048,
+        1.8790218983687594,
+        1
+      ],
+      "name": "GUNDAM_ZETA_MSZ-006_v035"
+    },
+    {
+      "mesh": 0,
+      "name": ""
+    },
+    {
+      "mesh": 1,
+      "name": ""
+    },
+    {
+      "children": [
+        8
+      ],
+      "matrix": [
+        66.061726893530988,
+        0.15396010396689364,
+        75.072128890360588,
+        0,
+        66.271104444224321,
+        -47.101187047421163,
+        -58.220433650622624,
+        0,
+        35.270227608951373,
+        88.212552819937301,
+        -31.217888612180889,
+        0,
+        -46.348583221435547,
+        49.458248138427727,
+        51.529178619384766,
+        1
+      ],
+      "name": "Light"
+    },
+    {
+      "children": [
+        9
+      ],
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        2.2204460492503131e-16,
+        1,
+        0,
+        0,
+        -1,
+        2.2204460492503131e-16,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "name": ""
+    },
+    {
+      "name": ""
+    },
+    {
+      "children": [
+        11
+      ],
+      "matrix": [
+        0.82619983632047567,
+        -0.048346128549680414,
+        0.56129892420908578,
+        0,
+        0.044892732658781909,
+        0.99879260982676887,
+        0.019949062881724329,
+        0,
+        -0.56158567736227605,
+        0.00871633005855286,
+        0.82737268058104507,
+        0,
+        126.64656066894533,
+        5.506363868713378,
+        89.172447204589844,
+        1
+      ],
+      "name": "Camera"
+    },
+    {
+      "name": ""
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "OSG_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    },
+    {
+      "sampler": 0,
+      "source": 1
+    }
+  ]
+}
+

@@ -1,0 +1,496 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 65532,
+      "max": [
+        0.42365458607673645,
+        0.6443648338317871,
+        0.5867247581481934
+      ],
+      "min": [
+        -0.4236745536327362,
+        -0.7969313859939575,
+        -0.7076338529586792
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 786384,
+      "componentType": 5126,
+      "count": 65532,
+      "max": [
+        0.9999633431434631,
+        0.9999786615371704,
+        1.0
+      ],
+      "min": [
+        -0.9999632835388184,
+        -0.9999814033508301,
+        -1.0
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 65532,
+      "max": [
+        0.9999992251396179,
+        0.9999968409538269,
+        0.9999843239784241,
+        1.0
+      ],
+      "min": [
+        -0.9999988079071045,
+        -0.9999998211860657,
+        -0.9999649524688721,
+        -1.0
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 65532,
+      "max": [
+        1.0,
+        0.998558521270752
+      ],
+      "min": [
+        0.0,
+        0.0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 524256,
+      "componentType": 5126,
+      "count": 65532,
+      "max": [
+        1.0,
+        0.998558521270752
+      ],
+      "min": [
+        0.0,
+        0.0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 1048512,
+      "componentType": 5126,
+      "count": 65532,
+      "max": [
+        1.0,
+        0.998558521270752
+      ],
+      "min": [
+        0.0,
+        0.0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 1572768,
+      "componentType": 5126,
+      "count": 65532,
+      "max": [
+        1.0,
+        0.998558521270752
+      ],
+      "min": [
+        0.0,
+        0.0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 302553,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 1572768,
+      "componentType": 5126,
+      "count": 6265,
+      "max": [
+        0.35551586747169495,
+        0.6008273363113403,
+        0.5867245197296143
+      ],
+      "min": [
+        -0.3447747528553009,
+        -0.7969313859939575,
+        -0.7041949033737183
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 1647948,
+      "componentType": 5126,
+      "count": 6265,
+      "max": [
+        0.9998680353164673,
+        0.9998186826705933,
+        1.0
+      ],
+      "min": [
+        -0.999853253364563,
+        -0.9998508095741272,
+        -1.0
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "byteOffset": 1048512,
+      "componentType": 5126,
+      "count": 6265,
+      "max": [
+        0.9999551773071289,
+        0.9999920129776001,
+        0.9999381899833679,
+        1.0
+      ],
+      "min": [
+        -0.9999186992645264,
+        -0.9997456073760986,
+        -0.9952046275138855,
+        -1.0
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 2097024,
+      "componentType": 5126,
+      "count": 6265,
+      "max": [
+        0.941513180732727,
+        0.6465871930122375
+      ],
+      "min": [
+        0.15006975829601288,
+        0.08621612936258316
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 2147144,
+      "componentType": 5126,
+      "count": 6265,
+      "max": [
+        0.941513180732727,
+        0.6465871930122375
+      ],
+      "min": [
+        0.15006975829601288,
+        0.08621612936258316
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 2197264,
+      "componentType": 5126,
+      "count": 6265,
+      "max": [
+        0.941513180732727,
+        0.6465871930122375
+      ],
+      "min": [
+        0.15006975829601288,
+        0.08621612936258316
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 2247384,
+      "componentType": 5126,
+      "count": 6265,
+      "max": [
+        0.941513180732727,
+        0.6465871930122375
+      ],
+      "min": [
+        0.15006975829601288,
+        0.08621612936258316
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 1210212,
+      "componentType": 5125,
+      "count": 15177,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "KinanArts (https://sketchfab.com/KinanArts)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/dragon-head-9975ec8810134f52802381b4132379f1",
+      "title": "Dragon Head"
+    },
+    "generator": "Sketchfab-13.14.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 1270920,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 2297504,
+      "byteOffset": 1270920,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 1723128,
+      "byteOffset": 3568424,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 1148752,
+      "byteOffset": 5291552,
+      "byteStride": 16,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 6440304,
+      "uri": "scene.bin"
+    }
+  ],
+  "images": [
+    {
+      "uri": "textures/Dragon_High2_3_baseColor.png"
+    },
+    {
+      "uri": "textures/Dragon_High2_3_metallicRoughness.png"
+    },
+    {
+      "uri": "textures/Dragon_High2_3_emissive.png"
+    },
+    {
+      "uri": "textures/Dragon_High2_3_normal.png"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "emissiveFactor": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "emissiveTexture": {
+        "index": 2
+      },
+      "name": "Dragon_High2_3",
+      "normalTexture": {
+        "index": 3
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicFactor": 0.0,
+        "metallicRoughnessTexture": {
+          "index": 1
+        }
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Dragon_High2_3.001_Dragon_High2_3_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3,
+            "TEXCOORD_1": 4,
+            "TEXCOORD_2": 5,
+            "TEXCOORD_3": 6
+          },
+          "indices": 7,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Dragon_High2_3.001_Dragon_High2_3_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 9,
+            "POSITION": 8,
+            "TANGENT": 10,
+            "TEXCOORD_0": 11,
+            "TEXCOORD_1": 12,
+            "TEXCOORD_2": 13,
+            "TEXCOORD_3": 14
+          },
+          "indices": 15,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        0.9160206317901611,
+        -5.255422754752417e-32,
+        2.5948751634683668e-16,
+        0.0,
+        2.5948751634683668e-16,
+        5.609008918124489e-17,
+        -0.9160206317901611,
+        0.0,
+        3.666520168264237e-32,
+        0.9160206317901611,
+        5.609008918124489e-17,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2
+      ],
+      "matrix": [
+        0.009999999776482582,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.009999999776482582,
+        0.0,
+        0.0,
+        -0.009999999776482582,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "07be1fc799f8405f97313b3337927ef4.fbx"
+    },
+    {
+      "children": [
+        3
+      ],
+      "name": "Object_2"
+    },
+    {
+      "children": [
+        4
+      ],
+      "name": "RootNode"
+    },
+    {
+      "children": [
+        5,
+        6
+      ],
+      "name": "Dragon_High2_3.001",
+      "rotation": [
+        -3.208294074852347e-08,
+        0.9191758632659912,
+        -7.48763824276466e-08,
+        -0.3938473165035248
+      ],
+      "scale": [
+        350.0963134765625,
+        350.09637451171875,
+        350.0963134765625
+      ],
+      "translation": [
+        20.07383918762207,
+        880.06884765625,
+        147.0369873046875
+      ]
+    },
+    {
+      "mesh": 0,
+      "name": "Dragon_High2_3.001_Dragon_High2_3_0"
+    },
+    {
+      "mesh": 1,
+      "name": "Dragon_High2_3.001_Dragon_High2_3_0"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    },
+    {
+      "sampler": 0,
+      "source": 1
+    },
+    {
+      "sampler": 0,
+      "source": 2
+    },
+    {
+      "sampler": 0,
+      "source": 3
+    }
+  ]
+}
