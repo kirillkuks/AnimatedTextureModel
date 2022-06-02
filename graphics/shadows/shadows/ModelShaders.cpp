@@ -11,7 +11,7 @@ HRESULT ModelShaders::CreateDeviceDependentResources(ID3D11Device* device)
 {
     HRESULT hr = S_OK;
 
-    m_pPixelShaders.resize(16);
+    m_pPixelShaders.resize(32);
 
     Microsoft::WRL::ComPtr<ID3DBlob> blob;
 
@@ -48,6 +48,22 @@ HRESULT ModelShaders::CreateDeviceDependentResources(ID3D11Device* device)
         return hr;
 
     hr = device->CreatePixelShader(blob->GetBufferPointer(), blob->GetBufferSize(), nullptr, &m_pEmissivePixelShader);
+    if (FAILED(hr))
+        return hr;
+
+    defines.resize(1);
+    defines.push_back({ "HAS_EMISSIVE", "1" });
+    defines.push_back({ "HAS_ANIMATED_TEXTURE", "1" });
+    defines.push_back({ "HAS_COLOR_TEXTURE", "1" });
+    defines.push_back({ nullptr, nullptr });
+
+    hr = CompileShaderFromFile((wsrcPath + L"PBRShaders.fx").c_str(), "ps_main", "ps_5_0", &blob, defines.data());
+    if (FAILED(hr))
+        return hr;
+
+    hr = device->CreatePixelShader(blob->GetBufferPointer(), blob->GetBufferSize(), nullptr, &m_pAnimatedEmissivePixelShader);
+    if (FAILED(hr))
+        return hr;
 
     return hr;
 }

@@ -21,6 +21,7 @@ public:
     ID3D11RenderTargetView*    GetRenderTarget() const      { return m_pRenderTargetView.Get(); };
     ID3D11DepthStencilView*    GetDepthStencil() const      { return m_pDepthStencilView.Get(); };
     ID3D11DepthStencilState*   GetTransDepthStencil() const { return m_pTransDepthStencilState.Get(); };
+    ID3D11DepthStencilState*   GetOpaqueDepthStencil() const{ return m_pOpaqueDepthStencilState.Get(); };
     ID3DUserDefinedAnnotation* GetAnnotation() const        { return m_pAnnotation.Get(); };
 
     D3D11_VIEWPORT GetViewPort() const { return m_viewport; };
@@ -36,6 +37,7 @@ private:
     Microsoft::WRL::ComPtr<ID3D11RenderTargetView>  m_pRenderTargetView;
     Microsoft::WRL::ComPtr<ID3D11DepthStencilView>  m_pDepthStencilView;
     Microsoft::WRL::ComPtr<ID3D11DepthStencilState> m_pTransDepthStencilState;
+    Microsoft::WRL::ComPtr<ID3D11DepthStencilState> m_pOpaqueDepthStencilState;
 
     Microsoft::WRL::ComPtr<ID3DUserDefinedAnnotation> m_pAnnotation;
 

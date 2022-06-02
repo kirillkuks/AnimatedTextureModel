@@ -58,6 +58,12 @@ void Artorias::RenderPrimitive(Model::Primitive& primitive,
     bool usePS,
     bool isAnimated)
 {
+    // AAV Turn animated texture emission on/off
+    if (emissive)
+    {
+        return;
+    }
+
     std::vector<ID3D11Buffer*> combined;
     std::vector<UINT> offset;
     std::vector<UINT> stride;
@@ -92,10 +98,13 @@ void Artorias::RenderPrimitive(Model::Primitive& primitive,
     {
         if (emissive)
         {
-            materialBufferData.Albedo = DirectX::XMFLOAT4(1, 1, 1, materialBufferData.Albedo.w);
-            // context->PSSetShaderResources(slots.baseColorTextureSlot, 1, m_pShaderResourceViews[material.emissiveTexture].GetAddressOf());
-            context->PSSetShaderResources(slots.baseColorTextureSlot, 1, &m_pAnimatedTexture->GetLayersTargetTexturesSRV()[0]);
-            context->PSSetShader(m_pModelShaders->GetEmissivePixelShader(), nullptr, 0);
+            std::vector<ID3D11ShaderResourceView*> textures = std::vector<ID3D11ShaderResourceView*>{ m_pAnimatedTexture->GetLayersTargetTexturesSRV()[0], m_pAnimatedTexture->GetFields()[0]->CurrentVectorFieldSRV() };
+
+            context->PSSetShaderResources(8, 2 * (UINT)m_pAnimatedTexture->GetLayersNum(), textures.data());
+
+            context->PSSetConstantBuffers(4, 1, m_pAnimatedTexture->GetInterpolateBufferAdress());
+
+            context->PSSetShader(m_pModelShaders->GetAnimatedEmissivePixelShader(), nullptr, 0);
         }
         else
         {

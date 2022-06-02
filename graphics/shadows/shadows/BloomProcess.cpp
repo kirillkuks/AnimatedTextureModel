@@ -22,6 +22,10 @@ HRESULT BloomProcess::CreateDeviceDependentResources(ID3D11Device* device)
     if (FAILED(hr))
         return hr;
 
+    hr = CreateComputeShader(device, L"BlurVertComputeShader.cso", bytes, &m_pBlurVertComputeShader);
+    if (FAILED(hr))
+        return hr;
+
     hr = CreateComputeShader(device, L"BloomAddComputeShader.cso", bytes, &m_pAddComputeShader);
     if (FAILED(hr))
         return hr;
@@ -70,19 +74,27 @@ void BloomProcess::Process(ID3D11DeviceContext* context, RenderTexture* sourceTe
     ID3D11UnorderedAccessView* nulluav[1] = { nullptr };
     ID3D11ShaderResourceView* nullsrv[1] = { nullptr };
 
-    UINT steps = 3;
+    UINT steps = 2;
     UINT maskInd = 0;
     for (UINT step = 0; step < steps; ++step, maskInd = 1 - maskInd)
     {
         ID3D11ShaderResourceView* srv = m_pMaskTextures[maskInd]->GetShaderResourceView();
         ID3D11UnorderedAccessView* uav = m_pMaskTextures[1 - maskInd]->GetUnorderedAccessView();
 
-        context->CSSetShader(m_pBlurComputeShader.Get(), nullptr, 0);
         context->CSSetShaderResources(0, 1, &srv);
         context->CSSetUnorderedAccessViews(0, 1, &uav, nullptr);
         context->CSSetConstantBuffers(0, 1, m_pConstantBuffer.GetAddressOf());
 
-        context->Dispatch((blurData.ImageSize.x + 64 - 1) / 64, blurData.ImageSize.y, 1);
+        if (step % 2 == 0)
+        {
+            context->CSSetShader(m_pBlurComputeShader.Get(), nullptr, 0);
+            context->Dispatch((blurData.ImageSize.x + 64 - 1) / 64, blurData.ImageSize.y, 1);
+        }
+        else
+        {
+            context->CSSetShader(m_pBlurVertComputeShader.Get(), nullptr, 0);
+            context->Dispatch((blurData.ImageSize.y + 64 - 1) / 64, blurData.ImageSize.x, 1);
+        }
 
         context->CSSetShader(nullptr, nullptr, 0);
         context->CSSetUnorderedAccessViews(0, 1, nulluav, nullptr);

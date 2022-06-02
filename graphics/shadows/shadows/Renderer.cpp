@@ -1188,6 +1188,7 @@ void Renderer::RenderModels()
         m_pModels[i]->Render(context, m_constantBufferData, m_pConstantBuffer.Get(), m_pMaterialBuffer.Get(), slots);
     
     context->OMSetRenderTargets(1, &bloomRenderTarget, m_pDeviceResources->GetDepthStencil());
+    context->OMSetDepthStencilState(m_pDeviceResources->GetOpaqueDepthStencil(), 0);
     for (size_t i = 0; i < m_pModels.size(); ++i)
         m_pModels[i]->Render(context, m_constantBufferData, m_pConstantBuffer.Get(), m_pMaterialBuffer.Get(), slots, true);
     
@@ -1232,8 +1233,12 @@ void Renderer::Render()
         {
             RenderModels();
 
+            m_pDeviceResources->GetAnnotation()->BeginEvent(L"Bloom");
+
             context->OMSetRenderTargets(0, nullptr, nullptr);
             m_pBloom->Process(context, m_pRenderTexture.get(), m_pDeviceResources->GetViewPort());
+
+            m_pDeviceResources->GetAnnotation()->EndEvent();
         }
         else
             RenderSphere(m_constantBufferData);

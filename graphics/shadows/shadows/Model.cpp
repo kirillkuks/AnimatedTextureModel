@@ -164,6 +164,14 @@ HRESULT Model::CreateMaterials(ID3D11Device* device, tinygltf::Model& model)
 
     for (tinygltf::Material& gltfMaterial : model.materials)
     {
+        // AAV
+        // Small hack here to add animated texture to sword material
+        bool hasAnimatedTexture = false;
+        if (gltfMaterial.name == "Mat_Sword")
+        {
+            hasAnimatedTexture = true;
+        }
+
         Material material = {};
         material.name = gltfMaterial.name;
         material.blend = false;
@@ -238,6 +246,11 @@ HRESULT Model::CreateMaterials(ID3D11Device* device, tinygltf::Model& model)
 
         if (gltfMaterial.occlusionTexture.index >= 0)
             material.pixelShaderDefinesFlags |= ModelShaders::MATERIAL_HAS_OCCLUSION_TEXTURE;
+
+        if (hasAnimatedTexture)
+        {
+            material.pixelShaderDefinesFlags |= ModelShaders::MODEL_HAS_ANIMATED_TEXTURE;
+        }
 
         hr = m_pModelShaders->CreatePixelShader(device, material.pixelShaderDefinesFlags);
         if (FAILED(hr))
