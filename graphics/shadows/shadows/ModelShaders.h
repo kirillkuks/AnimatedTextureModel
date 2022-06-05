@@ -12,7 +12,7 @@ public:
         MATERIAL_HAS_NORMAL_TEXTURE = 0x4,
         MATERIAL_HAS_OCCLUSION_TEXTURE = 0x8,
         
-        MODEL_HAS_ANIMATED_TEXTURE = 0x16
+        MODEL_HAS_ANIMATED_TEXTURE = 0x10
     } MODEL_PIXEL_SHADER_DEFINES;
 
     ModelShaders();
@@ -25,12 +25,14 @@ public:
     ID3D11InputLayout* GetInputLayout() const { return m_pInputLayout.Get(); };
     ID3D11VertexShader* GetVertexShader() const { return m_pVertexShader.Get(); };
     ID3D11PixelShader* GetEmissivePixelShader() const { return m_pEmissivePixelShader.Get(); };
+    ID3D11PixelShader* GetAnimatedEmissivePixelShader() const { return m_pAnimatedEmissivePixelShader.Get(); };
     ID3D11PixelShader* GetPixelShader(UINT definesFlags) const { return m_pPixelShaders[definesFlags].Get(); };
 
 private:
     Microsoft::WRL::ComPtr<ID3D11InputLayout>  m_pInputLayout;
     Microsoft::WRL::ComPtr<ID3D11VertexShader> m_pVertexShader;
     Microsoft::WRL::ComPtr<ID3D11PixelShader>  m_pEmissivePixelShader;
+    Microsoft::WRL::ComPtr<ID3D11PixelShader>  m_pAnimatedEmissivePixelShader;
 
     std::vector<Microsoft::WRL::ComPtr<ID3D11PixelShader>> m_pPixelShaders;
 };

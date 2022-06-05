@@ -18,6 +18,7 @@ public:
 
 private:
     Microsoft::WRL::ComPtr<ID3D11ComputeShader> m_pBlurComputeShader;
+    Microsoft::WRL::ComPtr<ID3D11ComputeShader> m_pBlurVertComputeShader;
     Microsoft::WRL::ComPtr<ID3D11ComputeShader> m_pAddComputeShader;
     Microsoft::WRL::ComPtr<ID3D11Buffer>        m_pConstantBuffer;
 

@@ -244,24 +244,63 @@ float4 GetAlbedo(float2 uv)
     return albedo;
 }
 
+float2 GetAnimatedTextureCoords(in float2 uv)
+{
+    float dx = field1Texture.Sample(FieldSampler, uv).r;
+    float dy = field1Texture.Sample(FieldSampler, uv).g;
+
+    float2 dstPixCoords = uv;
+    float2 srcPixCoords = dstPixCoords + float2(dx, dy);
+
+    float2 t = AnimatedTextureInfo.x;
+
+    float2 newCoords = uv + t * float2(dx, dy);
+
+    float transformdx = field1Texture.Sample(FieldSampler, uv).b;
+    float transformdy = field1Texture.Sample(FieldSampler, uv).a;
+
+    if (transformdx * transformdx + transformdy * transformdy > 0)
+    {
+        newCoords = uv + float2(dx, dy)
+            + (1 - t) * float2(transformdx, transformdy);
+    }
+
+    return newCoords;
+}
+
 float4 GetAnimatedTextureAlbedo(float2 uv, unsigned int ind)
 {
     Texture2D textures[] = { layer1Texture, layer2Texture };
     float4 albedo = Albedo;
 
+    float2 animatedCoords = GetAnimatedTextureCoords(uv);
+
 #ifdef HAS_COLOR_TEXTURE
-    albedo *= textures[ind].Sample(TextureSampler, uv);
+    albedo *= textures[ind].Sample(TextureSampler, animatedCoords);
 #else
     albedo = pow(albedo, 2.2f);
 #endif
 #ifdef HAS_OCCLUSSION_TEXTURE
-    albedo.xyz *= metallicRoughnessTexture.Sample(ModelSampler, uv).r;
+    albedo.xyz *= metallicRoughnessTexture.Sample(ModelSampler, animatedCoords).r;
 #endif
     return albedo;
 }
 
-float4 GetAlbedoByPixel(float4 pix, float2 uv)
+float4 GetAlbedoByPixel(float2 uv)
 {
+    float2 animatedCoords = GetAnimatedTextureCoords(uv);
+
+    float4 pix = layer1Texture.Sample(TextureSampler, animatedCoords);
+
+    // Color interpolation
+    /* {
+        float3 srcColor = layer1Texture.Sample(ModelSampler, input.Tex + float2(dx, dy)).rgb;
+        float3 dstColor = layer1Texture.Sample(ModelSampler, input.Tex).rgb;
+        pix.r = srcColor.r * t + dstColor.r * (1 - t);
+        pix.g = srcColor.g * t + dstColor.g * (1 - t);
+        pix.b = srcColor.b * t + dstColor.b * (1 - t);
+    } */
+
     float4 albedo = Albedo;
 #ifdef HAS_COLOR_TEXTURE
     albedo *= pix;
@@ -269,7 +308,7 @@ float4 GetAlbedoByPixel(float4 pix, float2 uv)
     albedo = pow(albedo, 2.2f);
 #endif
 #ifdef HAS_OCCLUSSION_TEXTURE
-    albedo.xyz *= metallicRoughnessTexture.Sample(ModelSampler, uv).r;
+    albedo.xyz *= metallicRoughnessTexture.Sample(ModelSampler, animatedCoords).r;
 #endif
     return albedo;
 }
@@ -300,12 +339,20 @@ float3 GetPSSMSplitColor(float3 pos)
 
 float4 ps_main(PS_INPUT input) : SV_TARGET
 {
-	float3 color1, color2, color3;
-	float3 v = normalize(CameraPos.xyz - input.WorldPos.xyz);
+    float3 color1, color2, color3;
+    float3 v = normalize(CameraPos.xyz - input.WorldPos.xyz);
     float3 n = normalize(input.Normal);
 
 #ifdef HAS_EMISSIVE
+#ifdef HAS_ANIMATED_TEXTURE
+    {
+        float4 emissive = GetAnimatedTextureAlbedo(input.Tex, 0);
+        emissive.xyz *= 5.0;   // AAV Small hack - make it shine! =)
+        return emissive;
+    }
+#else
     return diffuseTexture.Sample(ModelSampler, input.Tex);
+#endif // !HAS_ANIMATED_TEXTURE
 #else
 #ifdef HAS_NORMAL_TEXTURE
     float3 nm = (normalTexture.Sample(ModelSampler, input.Tex) * 2.0f - 1.0f).xyz;
@@ -321,54 +368,23 @@ float4 ps_main(PS_INPUT input) : SV_TARGET
     float roughness = material.y;
     float4 albedo = GetAlbedo(input.Tex);
 
+    float3 additionalL = float3(0,0,0);
+#ifdef HAS_ANIMATED_TEXTURE
     {
-        float4 pix = layer1Texture.Sample(TextureSampler, input.Tex);
+        // Try additional Luminance, instead of albedo color
+        additionalL = GetAnimatedTextureAlbedo(input.Tex, 0).xyz * 3.0;    // Coords interpolation
 
-        float dx = field1Texture.Sample(FieldSampler, input.Tex).r;
-        float dy = field1Texture.Sample(FieldSampler, input.Tex).g;
+        //albedo = GetAnimatedTextureAlbedo(input.Tex, 0);    // Coords interpolation
 
-        float2 dstPixCoords = input.Tex;
-        float2 srcPixCoords = dstPixCoords + float2(dx, dy);
-
-        float2 t = AnimatedTextureInfo.x;
-
-        float2 newCoords = input.Tex + t * float2(dx, dy);
-
-        float transformdx = field1Texture.Sample(FieldSampler, input.Tex).b;
-        float transformdy = field1Texture.Sample(FieldSampler, input.Tex).a;
-
-        float2 uv = input.Tex;
-        float d = 1.0 / AnimatedTextureInfo.y;
-
-        if (transformdx * transformdx + transformdy * transformdy > 0)
-        {
-            newCoords = input.Tex + float2(dx, dy)
-                + (1 - t) * float2(transformdx, transformdy);
-        }
-
-        pix = layer1Texture.Sample(TextureSampler, newCoords);
-
-        // Color interpolation
-        /* {
-            float3 srcColor = layer1Texture.Sample(ModelSampler, input.Tex + float2(dx, dy)).rgb;
-            float3 dstColor = layer1Texture.Sample(ModelSampler, input.Tex).rgb;
-            pix.r = srcColor.r * t + dstColor.r * (1 - t);
-            pix.g = srcColor.g * t + dstColor.g * (1 - t);
-            pix.b = srcColor.b * t + dstColor.b * (1 - t);
-        } */
-
-        if (pix.r > 10.0 / 255.0 && pix.g > 10.0 / 255.0 && pix.b > 10.0 / 255.0)
-        {
-            albedo = GetAnimatedTextureAlbedo(newCoords, 0);    // Coords interpolation
-
-            // albedo = GetAlbedoByPixel(pix, input.Tex);    // Color interpolation
-        }
+        // albedo = GetAlbedoByPixel(pix, input.Tex);    // Color interpolation
     }
+#endif // HAS_ANIMATED_TEXTURE
 
-    float3 color = 0.0f;
+    float3 color = 0;
     [unroll]
     for (uint i = 0; i < NUM_LIGHTS; ++i)
         color += LO_i(input.WorldPos.xyz, n, v, i, input.WorldPos.xyz, albedo.rgb, metalness, roughness);
+    color += additionalL;
 
     float3 ambient = Ambient(n, v, albedo.rgb, metalness, roughness);
 

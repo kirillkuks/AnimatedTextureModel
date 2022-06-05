@@ -200,6 +200,9 @@
     <FxCompile Include="BlurComputeShader.hlsl">
       <Filter>BloomShaders</Filter>
     </FxCompile>
+    <FxCompile Include="BlurVertComputeShader.hlsl">
+      <Filter>BloomShaders</Filter>
+    </FxCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DeviceResources.h">
